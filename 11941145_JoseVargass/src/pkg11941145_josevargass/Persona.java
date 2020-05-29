@@ -100,7 +100,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", estado=" + estado + ", altura=" + altura + ", peso=" + peso + ", mensajes=" + mensajes + '}';
+        return nombre ;
     }
     
     

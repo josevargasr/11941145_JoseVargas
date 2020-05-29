@@ -13,35 +13,35 @@ import java.util.Date;
  */
 public class Personal_General extends Persona{
     
-    protected String educacion;
-    protected Date horario;
+    protected String ocupacion;
+    protected String horario;
     protected Date tiempo_trabajo;
     protected int sueldo;
 
     public Personal_General() {
     }
 
-    public Personal_General(String educacion, Date horario, Date tiempo_trabajo, int sueldo, int id, String nombre, int edad, String sexo, String estado, int altura, int peso) {
+    public Personal_General(String ocupacion, String horario, Date tiempo_trabajo, int sueldo, int id, String nombre, int edad, String sexo, String estado, int altura, int peso) {
         super(id, nombre, edad, sexo, estado, altura, peso);
-        this.educacion = educacion;
+        this.ocupacion = ocupacion;
         this.horario = horario;
         this.tiempo_trabajo = tiempo_trabajo;
         this.sueldo = sueldo;
     }
 
-    public String getEducacion() {
-        return educacion;
+    public String getOcupacion() {
+        return ocupacion;
     }
 
-    public void setEducacion(String educacion) {
-        this.educacion = educacion;
+    public void setEducacion(String ocupacion) {
+        this.ocupacion = ocupacion;
     }
 
-    public Date getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
@@ -63,7 +63,7 @@ public class Personal_General extends Persona{
 
     @Override
     public String toString() {
-        return "Personal_General{" + "educacion=" + educacion + ", horario=" + horario + ", tiempo_trabajo=" + tiempo_trabajo + ", sueldo=" + sueldo + '}';
+        return super.toString();
     }
     
     
