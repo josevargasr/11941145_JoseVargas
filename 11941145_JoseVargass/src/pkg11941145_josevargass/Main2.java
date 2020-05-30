@@ -44,6 +44,7 @@ static boolean login = false;
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tabla_objetos = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
@@ -90,6 +91,7 @@ static boolean login = false;
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabla_personas = new javax.swing.JTable();
+        b_eliminarp = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -125,6 +127,17 @@ static boolean login = false;
         tf_horario = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         tf_salario = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tabla_mensajes = new javax.swing.JTable();
+        jLabel37 = new javax.swing.JLabel();
+        cb_emisor = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        cb_receptor = new javax.swing.JComboBox<>();
+        jLabel39 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ta_mensaje = new javax.swing.JTextArea();
+        b_enviar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,16 +147,23 @@ static boolean login = false;
             }
         });
 
+        jButton1.setText("Eliminar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         tabla_objetos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre", "Edad", "ID", "Sexo", "Estado Civil", "Altura", "Peso"
+                "Descripcion", "Marca", "Tamaño", "Calidad", "Persona"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -160,13 +180,19 @@ static boolean login = false;
                 .addContainerGap(145, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addGap(99, 99, 99)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Manejar Objetos", jPanel3);
@@ -236,6 +262,11 @@ static boolean login = false;
 
         jLabel28.setText("Talla:");
 
+        tf_tallaz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_tallazActionPerformed(evt);
+            }
+        });
         tf_tallaz.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tf_tallazKeyTyped(evt);
@@ -509,6 +540,13 @@ static boolean login = false;
         });
         jScrollPane3.setViewportView(tabla_personas);
 
+        b_eliminarp.setText("Eliminar");
+        b_eliminarp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_eliminarpMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -517,13 +555,19 @@ static boolean login = false;
                 .addContainerGap(145, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(b_eliminarp, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(b_eliminarp, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Manejar Personas", jPanel5);
@@ -825,6 +869,97 @@ static boolean login = false;
 
         jTabbedPane1.addTab("Agregar  Personas", jPanel2);
 
+        tabla_mensajes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emisor", "Receptor", "Mensaje"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tabla_mensajes);
+
+        jLabel37.setText("Emisor:");
+
+        jLabel38.setText("Receptor:");
+
+        jLabel39.setText("Mensaje:");
+
+        ta_mensaje.setColumns(20);
+        ta_mensaje.setRows(5);
+        jScrollPane8.setViewportView(ta_mensaje);
+
+        b_enviar.setText("Enviar");
+        b_enviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_enviarMouseClicked(evt);
+            }
+        });
+        b_enviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_enviarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jLabel37)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(cb_emisor, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(95, 95, 95)
+                                .addComponent(jLabel38)
+                                .addGap(28, 28, 28)
+                                .addComponent(cb_receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(69, 69, 69)
+                                .addComponent(jLabel39))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(134, 134, 134)
+                                .addComponent(b_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel37)
+                            .addComponent(cb_emisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel38)
+                            .addComponent(cb_receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
+        );
+
+        jTabbedPane1.addTab("Mensajeria", jPanel6);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -894,6 +1029,12 @@ static boolean login = false;
                     DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_persona.getModel();
                     dc.addElement(g);
                     cb_persona.setModel(dc);
+                    DefaultComboBoxModel bc = (DefaultComboBoxModel) cb_emisor.getModel();
+                    bc.addElement(g);
+                    cb_emisor.setModel(bc);
+                    DefaultComboBoxModel cc = (DefaultComboBoxModel) cb_receptor.getModel();
+                    cc.addElement(g);
+                    cb_receptor.setModel(cc);
                 }else{
                     edad = Integer.parseInt(tf_edad.getText());
                     id = Integer.parseInt(tf_id.getText());
@@ -916,6 +1057,12 @@ static boolean login = false;
                     DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_persona.getModel();
                     dc.addElement(pg);
                     cb_persona.setModel(dc);
+                    DefaultComboBoxModel bc = (DefaultComboBoxModel) cb_emisor.getModel();
+                    bc.addElement(pg);
+                    cb_emisor.setModel(bc);
+                    DefaultComboBoxModel cc = (DefaultComboBoxModel) cb_receptor.getModel();
+                    cc.addElement(pg);
+                    cb_receptor.setModel(cc);
                 }
                 Object[] newrow = {nombre, edad, id, sexo, estado, altura, peso};
                 DefaultTableModel modelo = (DefaultTableModel) tabla_personas.getModel();
@@ -1069,7 +1216,68 @@ static boolean login = false;
     }//GEN-LAST:event_cb_tipoItemStateChanged
 
     private void b_agregarobjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_agregarobjetoMouseClicked
-        // TODO add your handling code here:
+        double tallaz;
+        Color c;
+        int tamaño, comodidad;
+        String descripcion, marca, calidad, descripcion_suela, talla, tela, pais, descripcion_casa, instrucciones;
+        Persona p;
+        Date garantia;
+        String contra = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema: ");
+        if(contra.equals("unitec1234")){
+            try{
+                if(cb_tipo.getSelectedIndex()==0){
+                    c = bt_color.getBackground();
+                    tamaño = Integer.parseInt(tf_tamaño.getText());
+                    descripcion = ta_desc.getText();
+                    marca = tf_marca.getText();
+                    calidad = tf_calidad.getText();
+                    p = (Persona)cb_persona.getSelectedItem();
+                    descripcion_suela = ta_descz.getText();
+                    comodidad = Integer.parseInt(tf_comodidad.getText());
+                    tallaz = Integer.parseInt(tf_tallaz.getText());
+                    Zapato z = new Zapato(tallaz, descripcion_suela, comodidad, c, descripcion, marca, tamaño, calidad, p);
+                    objetos.add(z);
+                    
+                }else if(cb_tipo.getSelectedIndex()==1){
+                    c = bt_color.getBackground();
+                    tamaño = Integer.parseInt(tf_tamaño.getText());
+                    descripcion = ta_desc.getText();
+                    marca = tf_marca.getText();
+                    calidad = tf_calidad.getText();
+                    p = (Persona)cb_persona.getSelectedItem();
+                    talla = tf_tallar.getText();
+                    tela = tf_tela.getText();
+                    pais = tf_pais.getText();
+                    Ropa r = new Ropa(talla, tela, pais, c, descripcion, marca, tamaño, calidad, p);
+                    objetos.add(r);
+                    
+                }else{
+                    c = bt_color.getBackground();
+                    tamaño = Integer.parseInt(tf_tamaño.getText());
+                    descripcion = ta_desc.getText();
+                    marca = tf_marca.getText();
+                    calidad = tf_calidad.getText();
+                    p = ((Persona)cb_persona.getSelectedItem());
+                    descripcion_casa = ta_deschogar.getText();
+                    instrucciones = ta_instrucciones.getText();
+                    garantia = jd_garantia.getDate();
+                    Hogar h = new Hogar(descripcion_casa, instrucciones, garantia, c, descripcion, marca, tamaño, calidad, p);
+                    objetos.add(h);
+                    
+                }
+                Object[] newrow = {descripcion, marca ,tamaño, calidad, p.getNombre()};
+                DefaultTableModel modelo2 = (DefaultTableModel) tabla_objetos.getModel();
+                modelo2.addRow(newrow);
+                tabla_objetos.setModel(modelo2);
+                
+                JOptionPane.showMessageDialog(this, "El objeto se agregó con exito!");
+            }catch(Exception e){
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Ocurrio un error al agregar el objeto");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "La contraseña ingresada es incorrecta");
+        }
     }//GEN-LAST:event_b_agregarobjetoMouseClicked
 
     private void b_agregarobjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_agregarobjetoActionPerformed
@@ -1077,9 +1285,7 @@ static boolean login = false;
     }//GEN-LAST:event_b_agregarobjetoActionPerformed
 
     private void tf_tallazKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_tallazKeyTyped
-       if(!Character.isDigit(evt.getKeyChar())){
-            evt.consume();
-        }
+       
     }//GEN-LAST:event_tf_tallazKeyTyped
 
     private void tf_comodidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_comodidadKeyTyped
@@ -1089,6 +1295,44 @@ static boolean login = false;
     private void tf_tamañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tamañoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_tamañoActionPerformed
+
+    private void tf_tallazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tallazActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_tallazActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        if(tabla_objetos.getSelectedRow() >= 0){
+            DefaultTableModel modelo = (DefaultTableModel) tabla_objetos.getModel();
+            modelo.removeRow(tabla_objetos.getSelectedRow());
+            tabla_objetos.setModel(modelo);
+        }else{
+            String mensaje = "Debe seleccionar una fila para eliminar";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void b_eliminarpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_eliminarpMouseClicked
+        if(tabla_personas.getSelectedRow() >= 0){
+            DefaultTableModel modelo = (DefaultTableModel) tabla_personas.getModel();
+            modelo.removeRow(tabla_personas.getSelectedRow());
+            tabla_personas.setModel(modelo);
+        }else{
+            String mensaje = "Debe seleccionar una fila para eliminar";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+    }//GEN-LAST:event_b_eliminarpMouseClicked
+
+    private void b_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_enviarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_enviarActionPerformed
+
+    private void b_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_enviarMouseClicked
+        Object[] newrow = {((Persona)cb_emisor.getSelectedItem()), ((Persona)cb_receptor.getSelectedItem()), ta_mensaje.getText()};
+        DefaultTableModel modelo2 = (DefaultTableModel) tabla_mensajes.getModel();
+        modelo2.addRow(newrow);
+        tabla_mensajes.setModel(modelo2);
+        JOptionPane.showMessageDialog(null, "El mensaje fue enviado con exito");
+    }//GEN-LAST:event_b_enviarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1129,13 +1373,18 @@ static boolean login = false;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_agregar;
     private javax.swing.JButton b_agregarobjeto;
+    private javax.swing.JButton b_eliminarp;
+    private javax.swing.JButton b_enviar;
     private javax.swing.JButton bt_color;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cb_cargo;
+    private javax.swing.JComboBox<String> cb_emisor;
     private javax.swing.JComboBox<String> cb_estado;
     private javax.swing.JComboBox<String> cb_persona;
+    private javax.swing.JComboBox<String> cb_receptor;
     private javax.swing.JComboBox<String> cb_rol;
     private javax.swing.JComboBox<String> cb_tipo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1166,6 +1415,9 @@ static boolean login = false;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1177,12 +1429,15 @@ static boolean login = false;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private com.toedter.calendar.JDateChooser jd_fecha;
     private com.toedter.calendar.JDateChooser jd_garantia;
@@ -1193,6 +1448,8 @@ static boolean login = false;
     private javax.swing.JTextArea ta_deschogar;
     private javax.swing.JTextArea ta_descz;
     private javax.swing.JTextArea ta_instrucciones;
+    private javax.swing.JTextArea ta_mensaje;
+    private javax.swing.JTable tabla_mensajes;
     public static javax.swing.JTable tabla_objetos;
     public static javax.swing.JTable tabla_personas;
     private javax.swing.JTextField tf_altura;
